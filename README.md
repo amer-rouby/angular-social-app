@@ -1,8 +1,10 @@
+### Angular Social App Project
 ## Usage
 
 Webpack Babel starter that support:
  * New versions of Javascript (es6, ...)
  * Support CSS, SASS Loaders
+ * Angular.js version 1
 
 ### Installation
 
