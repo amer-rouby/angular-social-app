@@ -1,0 +1,8 @@
+<div class="container mt-3">
+    <div>
+        <card-post-directive ng-repeat="post in ctrl.posts  track by post.id" 
+            post="post" 
+            show-comments="true">
+        </card-post-directive>
+    </div>
+</div>

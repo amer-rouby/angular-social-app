@@ -1,0 +1,43 @@
+@import "bootstrap/scss/bootstrap";
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(221, 221, 221);
+    margin: 0;
+    padding: 0;
+    ul {
+        li {
+            list-style: none;
+         } 
+         .fa{
+            font-size: 30px;
+         }
+         .profile-picture {
+            width: 60px;
+            height: 60px;
+            border-radius: 40px;
+         }
+         .showMore{
+            color: crimson;
+            font-size: 13px;
+         }
+         
+    }
+    .load-comment{
+      cursor: pointer;
+    }
+    .comments li {
+        font-size: 13px;
+     }
+    
+  }
+ 
+
+  
