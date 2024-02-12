@@ -1,24 +1,52 @@
-<form>
+<form  ng-submit="ctrl.validationError()" >
     <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label">Email address</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+      <label for="username" class="form-label">Email address</label>
+     
+      <input type="text"
+        ng-model="ctrl.username"
+        class="form-control" 
+        id="username" 
+        name="username"
+        placeholder="Add Username">
+
+        <div ng-if="ctrl.usernameErr">
+          <span style="color: red;">Username is required.</span>
+        </div>
+
     </div>
 
     <div class="mb-3">
-      <label for="exampleInputPassword1" class="form-label">Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1">
+      <label for="password" class="form-label">Password</label>
+      
+      <input type="password"
+        name="password"
+        ng-model="ctrl.password"
+        id="password" 
+        class="form-control"
+        placeholder="Add Password">
+
+        <div ng-if="ctrl.passwordErr">
+          <span style="color: red;">Password is required.</span>
+        </div>
+
     </div>
 
     <div class="mb-3">
-      <label for="exampleInputPassword1" class="form-label">Message</label>
-      <input type="text" class="form-control" id="exampleInputPassword1">
-    </div>
+      <label for="message" class="form-label">Message</label>  
+      
+      <input type="text" 
+        name="message"
+        ng-model="ctrl.message"
+        id="message" 
+        class="form-control"
+        placeholder="Add Message">
 
-    <div class="mb-3 form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        <div ng-if="ctrl.messageErr">
+          <span style="color: red;">Message is required.</span>
+        </div>
     </div>
     
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" 
+    class="btn btn-primary">Submit</button>
+
 </form>

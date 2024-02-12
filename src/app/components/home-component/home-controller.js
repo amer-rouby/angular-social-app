@@ -10,7 +10,6 @@ module.exports = function(app) {
 
         function getAllPosts() {
             postService.getPosts().then(function(result){
-                debugger
                 for(let i=0; i < result.data.length; i++){
                     let post = new Post(result.data[i])
                     vm.posts.push(post);
@@ -19,5 +18,6 @@ module.exports = function(app) {
         }
 
         getAllPosts();
+
     });
 }

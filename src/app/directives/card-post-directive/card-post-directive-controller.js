@@ -21,7 +21,6 @@ module.exports = function ( app ) {
             })
         }
 
-        var isLike = false;
         vm.handledLiked = function(post) { 
             post.isLike = !post.isLike;
             post.likes = post.isLike ? ++post.likes : --post.likes;

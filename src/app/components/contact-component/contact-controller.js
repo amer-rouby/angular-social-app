@@ -1,9 +1,9 @@
 module.exports = function(app) {
     app.controller('contactController', function(postService, Post) {
         
-        debugger
-        let vm = this;
-        vm.posts = [];
+        // debugger
+        // let vm = this;
+        // vm.posts = [];
 
         // vm.showMore = function(post) {
         //     post.showMore = true;

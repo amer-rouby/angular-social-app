@@ -7,9 +7,9 @@ module.exports = function(app) {
                 controllerAs: "ctrl"
             })
             
-            .when('/about', {
-                templateUrl: 'src/app/components/about-component/about-view.html',
-                controller: 'aboutController',
+            .when('/tasks', {
+                templateUrl: 'src/app/components/tasks-component/tasks-view.html',
+                controller: 'tasksController',
                 controllerAs: "ctrl"
             })
 
