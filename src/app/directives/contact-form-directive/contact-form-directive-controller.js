@@ -1,16 +1,20 @@
 module.exports = function ( app ) {
     app.controller( "contactFormController", function( ) {
         let vm = this;
-        vm.username = "";
-        vm.password = "";
-        vm.message = "";
 
-        vm.usernameErr = false;
-        vm.passwordErr = false;
-        vm.messageErr = false;
+          vm.username = "";
+          vm.password = "";
+          vm.message = "";
+
+        function _handleInputs(){
+          vm.usernameErr = false;
+          vm.passwordErr = false;
+          vm.messageErr = false;
+        }
+        _handleInputs()
 
         vm.validationError = function(){
-        //    !vm.username ? vm.usernameErr = true : vm.usernameErr = false
+             //vm.usernameErr = !vm.username
             if (!vm.username ) {
                 vm.usernameErr = true;
                 return
@@ -31,8 +35,13 @@ module.exports = function ( app ) {
               } else{
                 vm.messageErr = false;
               }
+
               _resetForm()
               alert('Form submitted successfully!');
+        }
+
+        vm.onFocus = function(){
+          _handleInputs()
         }
 
         function _resetForm(){

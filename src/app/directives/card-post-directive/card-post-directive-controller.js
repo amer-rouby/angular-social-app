@@ -3,7 +3,6 @@ module.exports = function ( app ) {
         let vm = this;
         
         vm.loadComments = function(post){
-            debugger
             post.showComments = !post.showComments;
             if(post.showComments) {
                 getPostComments(post);
@@ -17,7 +16,6 @@ module.exports = function ( app ) {
         function getPostComments(post) {
             postService.getPostComments(post.id).then(function(result){
                 post.comments = result.data;
-                console.log(  vm.comments );
             })
         }
 

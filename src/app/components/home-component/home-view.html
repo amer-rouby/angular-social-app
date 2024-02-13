@@ -2,6 +2,7 @@
     <div>
         <card-post-directive ng-repeat="post in ctrl.posts  track by post.id" 
             post="post" 
+            posts="posts" 
             show-comments="true">
         </card-post-directive>
     </div>

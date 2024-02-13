@@ -8,12 +8,12 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-image: url( '/src/assets/images/fullWidth.jpg') !important; 
+    background-image: url( '/src/assets/images/carbon-fiber-hd-widescreen-for-laptop-wallpaper-preview.jpg') !important; 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     width: 100%;
-    height: 100vh;
+    max-height: 100vh;
     background-attachment: fixed;
     
     ul {
@@ -28,11 +28,15 @@ body {
             height: 60px;
             border-radius: 40px;
          }
-         
-         .showMore{
-            color: rgb(224, 115, 137);
-            font-size: 13px;
+         .card-text{
+            cursor: pointer;
+            .showMore{
+               color: rgb(224, 115, 137);
+               font-size: 13px;
+               
+            }
          }
+         
          .load-comment{
             cursor: pointer;
           }
@@ -91,6 +95,13 @@ body {
        }
    }
    
+  
+   
+   
   }
 
- 
+  option{
+   font-size: 18px !important;
+   font-weight: bold !important;
+   
+ }  

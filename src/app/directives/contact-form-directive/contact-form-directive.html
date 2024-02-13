@@ -7,6 +7,7 @@
         class="form-control" 
         id="username" 
         name="username"
+        ng-focus="ctrl.onFocus()"
         placeholder="Add Username">
 
         <div ng-if="ctrl.usernameErr">
@@ -21,6 +22,7 @@
       <input type="password"
         name="password"
         ng-model="ctrl.password"
+        ng-focus="ctrl.onFocus(ctrl.passwordErr)"
         id="password" 
         class="form-control"
         placeholder="Add Password">
@@ -37,6 +39,7 @@
       <input type="text" 
         name="message"
         ng-model="ctrl.message"
+        ng-focus="ctrl.onFocus(ctrl.messageErr)"
         id="message" 
         class="form-control"
         placeholder="Add Message">
