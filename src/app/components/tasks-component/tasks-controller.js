@@ -40,9 +40,9 @@ module.exports = function(app) {
     
       vm.updatePagedTasks = function() {
           var start = Number(vm.currentPage ) * Number(+vm.pageSize);
-          var end = start + Number(+vm.pageSize); 
-          vm.pagedTasks = vm.tasks.slice(start, end);
-          vm.totalPages = Math.ceil(vm.tasks.length / +vm.pageSize)
+          var end = start + Number(+vm.pageSize);
+          vm.totalPages = Math.ceil(vm.tasks.length / +vm.pageSize) 
+          vm.pagedTasks = vm.tasks.slice(start, end); 
       };
         
       vm.nextPage = function() {
@@ -51,7 +51,7 @@ module.exports = function(app) {
           if(vm.currentPage == vm.totalPages -1){
             return vm.isDdisabled = true;
           }else{
-            vm.currentPage++;
+            ++vm.currentPage;
             vm.updatePagedTasks();
           }
 
@@ -71,6 +71,6 @@ module.exports = function(app) {
         vm.totalPages = 0;
         vm.currentPage = 0;
       }
-      vm.updatePagedTasks()
+      //vm.updatePagedTasks()
   })
 }
