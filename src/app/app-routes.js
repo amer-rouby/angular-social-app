@@ -6,7 +6,7 @@ module.exports = function(app) {
                 controller: 'homeController',
                 controllerAs: "ctrl"
             })
-            
+                
             .when('/tasks', {
                 templateUrl: 'src/app/components/tasks-component/tasks-view.html',
                 controller: 'tasksController',
@@ -18,6 +18,7 @@ module.exports = function(app) {
                 controller: 'contactController',
                 controllerAs: "ctrl"
             })
+
             .otherwise({
                 redirectTo: '/'
             });

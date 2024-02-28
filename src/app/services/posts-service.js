@@ -12,11 +12,13 @@ module.exports = function(app) {
                 return result;
             })
         }
+        
         function getPostComments(postId) {
             return $http.get(urlService.postComments.replace('{postId}', postId)).then(function(result){
                 return result;
             })
         }
+
         function getTodos() {
             return $http.get(urlService.todos).then(function(result){
                 return result;

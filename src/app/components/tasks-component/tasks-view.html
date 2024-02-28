@@ -26,15 +26,10 @@
         </div>
   </form>
 
-  <div >
-      <button ng-click="ctrl.isShowInfo()" 
-          style="color: #fff;" 
-          class="btn btn-info my-1"> 
-          <i class="fa fa-eye"></i> 
-          Show Tasks
-      </button>
+  <div class="d-flex justify-content-between">
+      <h2 style="color: #fff;">Welcome, may God bless you</h2>
       <button ng-click="ctrl.removeAllTasks()" 
-          ng-if="ctrl.showInfo" 
+         
           class="btn btn-danger my-1">
           <i class="fa fa-trash"></i> 
           Remove All Tasks 
@@ -42,43 +37,49 @@
       
   </div>
 
-  <table class="table table-striped" ng-if="ctrl.showInfo">
+  <table class="table table-striped">
     <thead>
       <tr>
+        <th></th>
         <th>Task Completed</th>
         <th>Task Title </th>
         <th></th>
       </tr>
     </thead>
+    
     <tbody>
-      <tr ng-repeat="task in ctrl.pagedTasks">
+      <tr ng-repeat="task in ctrl.pagedTasks track by $index ">
+        <td class="index">{{ctrl.pageSize * ctrl.currentPage + $index + 1 }}</td>
         <td class="completed"><input type="checkbox" ng-model="task.completed"> </td>
         <td class="title"><span>{{ task.title }}</span></td>
         <td class="remove">
           <button 
             ng-click="ctrl.removeTask(task.id)" 
-            ng-disabled = "task.completed"
+            ng-disabled = "!task.completed"
             class="btn btn-danger" >
             <i class="fa fa-trash"></i> Remove
           </button>
         </td>
       </tr>
-      <tr>
-
-    </tbody>
+    </tbody>  
   </table>
 
-  <div class="mt-4" ng-if="ctrl.showInfo">
+  <pagination-directive 
+      ng-if="ctrl.pagedTasks.length"
+      page-size="ctrl.pageSize"
+      current-page="ctrl.currentPage"
+      total-pages="ctrl.totalPages"
+      update-paged-tasks="ctrl.updatePagedTasks"
+      is-disabled="ctrl.isDisabled"
+      page-size-options="ctrl.pageSizeOptions">
+  </pagination-directive> 
+ <!-- <div class="mt-4" ng-if="ctrl.pagedTasks.length">
     <select  style="width: 160px;  background: #f0ecec;"
         name="page"
         class="form-control mb-4"  
         ng-model="ctrl.pageSize" 
-        ng-change="ctrl.updatePagedTasks()">
-        <!-- <option value="إختر">إختر</option> -->
-        <option value="5">5</option>
-        <option value="10">10</option>
-        <option value="15">15</option>
-        <option value="20">20</option>
+        ng-change="ctrl.updatePagedTasks()"
+        ng-options="option.id as option.name for option in ctrl.pageSizeOptions">
     </select>
 
         <button 
@@ -95,11 +96,11 @@
 
         <button 
         ng-click="ctrl.nextPage()" 
-        class="btn btn-danger ml-1"
+        class="btn btn-primary ml-1"
         ng-disabled = "ctrl.isDisabled"
         >Next Page <i class="fa fa-arrow-right"></i>
       </button>
 
-  </div>
+  </div> -->
 
 </div> 

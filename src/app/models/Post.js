@@ -2,6 +2,7 @@ module.exports = function(app) {
     app.factory('Post', function() {
         return function Post(model) {
             var vm = this;
+            
             vm.id = null;
             vm.userId = null;
             vm.title = null;
