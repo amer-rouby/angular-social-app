@@ -8,8 +8,9 @@ module.exports = function(app) {
             vm.title = null;
             vm.body = null;
             vm.showMore = false;
+            vm.showMoreComment = false;
             vm.showComments = false;
-            vm.likes = Math.floor(Math.random() * 100);
+            vm.likes = parseInt(Math.floor(Math.random() * 100));
             vm.isLike = false;
 
             if (model){
@@ -17,6 +18,7 @@ module.exports = function(app) {
                 vm.userId = model.userId;
                 vm.title = model.title;
                 vm.body = model.body;
+                // vm.likes = model.likes;
             } 
         }
     });

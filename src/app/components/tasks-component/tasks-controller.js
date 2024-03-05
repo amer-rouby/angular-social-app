@@ -29,10 +29,6 @@ module.exports = function (app) {
       vm.showInfo = true;
     };
 
-    vm.onFocus = function () {
-      vm.newTaskError = false;
-    };
-
     vm.removeTask = function (id) {
       vm.pagedTasks = vm.pagedTasks.filter((task) => task.id != id);
       vm.tasks = vm.tasks.filter((task) => task.id != id);
@@ -50,7 +46,9 @@ module.exports = function (app) {
       vm.totalPages = Math.round(vm.tasks.length / vm.pageSize);
       vm.pagedTasks = vm.tasks.slice(start, end);
     };
-
+    vm.onFocus = function () {
+      vm.newTaskError = false;
+    };
     vm.removeAllTasks = function () {
       vm.pagedTasks.length = 0;
       vm.showInfo = false;
