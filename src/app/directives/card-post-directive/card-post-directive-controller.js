@@ -12,8 +12,9 @@ module.exports = function (app) {
     vm.showMore = function (post) {
       post.showMore = !post.showMore;
     };
-    vm.showMoreComment = function (comment) {
-      comment.showMoreComment = !comment.showMoreComment;
+    
+    vm.showMoreComment = function (post) {
+      post.showMoreComment = !post.showMoreComment;
     };
 
     function getPostComments(post) {

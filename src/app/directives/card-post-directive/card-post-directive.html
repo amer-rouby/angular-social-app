@@ -46,7 +46,7 @@
                 <span class="mx-3">{{comment.name | uppercase}}</span>
             </div>
 
-            <p class="comment-body slanted-text" ng-click="ctrl.showMoreComment(comment)">
+            <p class="comment-body slanted-text" ng-click="ctrl.showMoreComment(post)">
                 {{comment.body | truncate:50:post.showMoreComment}}
                 <span class="showMore" ng-if="!post.showMoreComment"> show More... </span>
             </p>
