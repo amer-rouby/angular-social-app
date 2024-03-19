@@ -25,7 +25,7 @@ module.exports = function (app) {
         completed: false,
         userId: 3,
       });
-      vm.newTask = "";
+    //   vm.newTask = "";
       vm.showInfo = true;
     };
 

@@ -7,6 +7,7 @@ module.exports = function (app) {
             controllerAs: 'ctrl', 
             scope: {
                 post: "=?",
+                posts: "=?",
                 showComments: "=?",
             },
             

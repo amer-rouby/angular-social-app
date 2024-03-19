@@ -9,7 +9,9 @@
           ng-model="ctrl.newTask"
           placeholder="Add a new task" 
           ng-focus="ctrl.onFocus()"
+          english-to-arabic-directive data="ctrl.newTask"
           class="form-control" >
+          
 
         <button type="submit" class="btn btn-primary ml-2">
           <i class="fa fa-plus"></i>
@@ -19,13 +21,14 @@
         <div ng-if="ctrl.newTaskError">
           <span style=
               "color: #fff; 
-              background: rgb(226, 126, 126); 
-              padding: 3px; max-width: 45%; display: block;">
+              color: rgb(226, 126, 126); 
+              padding: 3px; display: block;">
               New Task is required.
           </span>
         </div>
+        <div>{{ctrl.newTask | englishToArabic}}</div>
   </form>
-
+    
   <div class="d-flex justify-content-between">
       <h2 style="color: #fff;">Welcome, may God bless you</h2>
       <button ng-click="ctrl.removeAllTasks()" 
@@ -49,9 +52,9 @@
     
     <tbody>
       <tr ng-repeat="task in ctrl.pagedTasks track by $index ">
-        <td class="index">{{ctrl.pageSize * ctrl.currentPage + $index + 1 }}</td>
+        <td class="index">{{ctrl.pageSize  * ctrl.currentPage  + $index + 1 }}</td>
         <td class="completed"><input type="checkbox" ng-model="task.completed"> </td>
-        <td class="title"><span>{{ task.title }}</span></td>
+        <td class="title"><span>{{ task.title |englishToArabic }}</span></td>
         <td class="remove">
           <button 
             ng-click="ctrl.removeTask(task.id)" 
